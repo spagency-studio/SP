@@ -29,6 +29,8 @@
   --oliva-oscuro:#565C36;
   /* Chispa: solo el sol naciente y el marcador sobre oscuro */
   --girasol:#E8B23A;
+  /* Expresivos (solo campañas e imagen) */
+  --rosa-chicle:#E9A3A8;
 
   --f-titulo:"Instrument Serif", Georgia, "Times New Roman", serif;
   --f-texto:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -112,22 +114,37 @@ em{font-style:italic}
 /* =========================================================
    Header
    ========================================================= */
-.header{position:sticky;top:0;z-index:40;background:var(--blanco);border-bottom:1px solid transparent;transition:border-color .3s var(--ease)}
-.header.is-scrolled{border-bottom-color:var(--lineas)}
+.header{position:sticky;top:0;z-index:40;background:transparent;border-bottom:1px solid transparent;transition:background-color .35s var(--ease),border-color .35s var(--ease)}
+.header.is-scrolled{background:var(--blanco);border-bottom-color:var(--lineas)}
 .header__in{display:flex;align-items:center;justify-content:space-between;min-height:72px}
 .header .boton{display:none;min-height:42px;padding:.55rem 1.15rem;font-size:.9375rem}
 
 /* =========================================================
    Hero
    ========================================================= */
-.hero{position:relative;overflow:hidden;min-height:calc(100svh - 72px);display:flex;flex-direction:column}
-.hero__in{padding-top:clamp(2.5rem, 1rem + 6vw, 6rem);padding-bottom:2.75rem}
-.hero h1{max-width:14ch;margin-bottom:2.25rem}
-.hero__lado{max-width:30rem}
-.hero__lado p{color:var(--texto-secundario);font-size:1.0625rem;margin-bottom:1.75rem}
-.hero .sol{width:72vw;right:-6vw;bottom:0;transform:translateY(100%);animation:amanecer 1.6s var(--ease) .2s forwards}
-.hero__marcador{align-self:flex-start;margin:0 0 calc(36vw + 2rem) var(--gutter);font-size:clamp(1.25rem, 1rem + 1vw, 1.75rem);transform:rotate(-4deg)}
-@keyframes amanecer{to{transform:translateY(0)}}
+.hero{position:relative;margin-top:-72px;display:grid;grid-template-columns:1fr;overflow-x:clip}
+.hero__texto{padding:calc(72px + clamp(2.5rem, 1.5rem + 4vw, 4rem)) var(--gutter) 0}
+.hero .kicker{margin-bottom:1.5rem;color:var(--negro-suave);letter-spacing:.2em}
+.hero .kicker .sep{color:var(--texto-secundario);margin-inline:.15em}
+.hero h1{font-size:clamp(3.25rem, 1rem + 5.6vw, 6.25rem);line-height:.92;letter-spacing:-.025em;margin-bottom:1.75rem}
+.hero h1 span{display:block}
+.hero h1 em{letter-spacing:-.015em}
+.hero__desc{font-size:1.125rem;line-height:1.55;color:var(--texto-secundario);max-width:34ch;margin-bottom:2rem}
+.hero__ctas{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.75rem}
+.link-sec{font-weight:600;font-size:1rem;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.35em;min-height:48px;display:inline-flex;align-items:center;transition:text-underline-offset .25s var(--ease)}
+.link-sec:hover{text-underline-offset:.55em}
+
+/* Zona visual: foto recortada sobre campo plano de color (collage) */
+.hero__visual{position:relative;background:var(--rosa-chicle);margin-top:clamp(4.5rem, 3rem + 6vw, 6rem);padding:0 var(--gutter) 5.5rem}
+.hero__collage{position:relative;width:82%;margin-top:-3rem}
+.hero__foto{position:relative;margin:0;width:100%;aspect-ratio:4/5;background:var(--topo);overflow:hidden}
+.hero__foto img{width:100%;height:100%;object-fit:cover;display:block}
+.hero__nota{position:absolute;right:-.5rem;bottom:-3.6rem;display:flex;align-items:flex-start;gap:.25rem;margin:0;color:var(--negro-suave)}
+.hero__nota .marcador{font-size:clamp(1.35rem, 1.1rem + 1vw, 1.9rem);transform:rotate(-5deg);white-space:nowrap}
+.hero__nota svg{width:44px;height:40px;flex:none;transform:translateY(-1.5rem)}
+.hero__nota{flex-direction:row}
+.js .hero__foto img{clip-path:inset(100% 0 0 0);animation:revelar-foto 1.4s var(--ease) .15s forwards}
+@keyframes revelar-foto{to{clip-path:inset(0 0 0 0)}}
 
 /* =========================================================
    01 · Espejo
@@ -282,7 +299,7 @@ em{font-style:italic}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js .revelar{opacity:1;transform:none;transition:none}
-  .hero .sol{animation:none;transform:none}
+  .js .hero__foto img{animation:none;clip-path:none}
   .boton,.boton .flecha,.wa-flotante{transition:none}
 }
 
@@ -291,8 +308,7 @@ em{font-style:italic}
    ========================================================= */
 @media (min-width:640px){
   .intentos{grid-template-columns:1fr 1fr;column-gap:2.5rem}
-  .hero .sol{width:58vw;right:-4vw}
-  .hero__marcador{margin-bottom:calc(29vw + 2rem)}
+  .hero__collage{width:62%}
 }
 @media (min-width:768px){
   .header .boton{display:inline-flex}
@@ -309,15 +325,13 @@ em{font-style:italic}
 }
 @media (min-width:1024px){
   .grid{grid-template-columns:repeat(12,1fr);column-gap:1.5rem;row-gap:0}
-  /* Hero: título amplio a la izquierda, bajada desplazada a la derecha, sol abajo a la derecha */
-  .hero__in{padding-bottom:clamp(12rem, 16vw, 18rem)}
-  .hero__grid{align-items:end}
-  .hero__grid .kicker{grid-column:1 / -1}
-  .hero h1{grid-column:1 / span 8;margin-bottom:0}
-  .hero__lado{grid-column:9 / span 4;padding-bottom:.6rem}
-  .hero .sol{width:min(40vw, 600px);right:5vw}
-  .hero__marcador{position:absolute;margin:0;right:calc(5vw + min(40vw, 600px) + 1rem);bottom:2.5rem}
-
+  /* Hero: 48 / 52 — texto a la izquierda, collage a la derecha */
+  .hero{grid-template-columns:48fr 52fr;min-height:min(100svh, 960px)}
+  .hero__texto{align-self:center;padding:calc(72px + 3rem) clamp(2rem, 4vw, 4.5rem) 4rem max(var(--gutter), calc((100vw - var(--max)) / 2));}
+  .hero__visual{margin-top:0;padding:0;display:flex;align-items:center}
+  .hero__collage{width:auto;height:min(72svh, 700px);aspect-ratio:4/5;margin:72px 0 0 -14%}
+  .hero__foto{height:100%}
+  .hero__nota{right:auto;left:calc(100% - 3rem);bottom:9%}
   .espejo__titulo{grid-column:1 / span 4}
   .espejo__titulo > div{position:sticky;top:120px}
   .problemas{grid-column:6 / -1}
@@ -372,18 +386,27 @@ em{font-style:italic}
 
 <!-- ======================= HERO ======================= -->
 <section class="hero" aria-labelledby="t-hero">
-  <div class="wrap hero__in">
-    <div class="grid hero__grid">
-      <p class="kicker revelar">¿Publicidad que funcione y que además se entienda?</p>
-      <h1 id="t-hero" class="revelar" data-d="1">Hago la publicidad y la comunicación digital de tu <em>marca</em>.</h1>
-      <div class="hero__lado revelar" data-d="2">
-        <p>Estrategia, pauta en Meta Ads e IA para marcas que quieren crecer. Un trabajo prolijo y profesional, explicado hasta que lo entiendas al 100%.</p>
-        <a class="boton boton--negro js-wa" href="#" target="_blank" rel="noopener">Hablemos <span class="flecha" aria-hidden="true">→</span></a>
-      </div>
+  <div class="hero__texto">
+    <p class="kicker revelar">Meta Ads <span class="sep" aria-hidden="true">/</span> Estrategia <span class="sep" aria-hidden="true">/</span> IA</p>
+    <h1 id="t-hero" class="revelar" data-d="1"><span>Menos ruido.</span> <span>Más <em>estrategia</em>.</span></h1>
+    <p class="hero__desc revelar" data-d="2">Meta Ads, estrategia e inteligencia artificial para marcas que quieren crecer con claridad, sin complicarse de más.</p>
+    <div class="hero__ctas revelar" data-d="2">
+      <a class="boton boton--negro js-wa" href="#" target="_blank" rel="noopener">Hablemos de tu marca <span class="flecha" aria-hidden="true">→</span></a>
+      <a class="link-sec" href="#servicios">Conocé nuestros servicios</a>
     </div>
   </div>
-  <p class="marcador hero__marcador">Hasta que quede claro.</p>
-  <span class="sol" aria-hidden="true"></span>
+  <div class="hero__visual">
+    <!-- IMAGEN PROTAGONISTA: reemplazar img/hero-oficina-mar.jpg (4:5, mín. 1600×2000 px). Hoy es un marcador de lugar liso. -->
+    <div class="hero__collage">
+    <figure class="hero__foto">
+      <img src="img/hero-oficina-mar.jpg" alt="Escritorio de oficina con una computadora antigua en la orilla del mar" width="1600" height="2000" fetchpriority="high">
+    </figure>
+    <p class="hero__nota">
+      <svg viewBox="0 0 54 48" aria-hidden="true"><path d="M50 44 C38 40 22 30 10 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M4 16 L10 6 L19 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marcador">Todo bajo control.</span>
+    </p>
+    </div>
+  </div>
 </section>
 
 <!-- ======================= 01 · ESPEJO ======================= -->
@@ -474,7 +497,7 @@ em{font-style:italic}
 </section>
 
 <!-- ======================= 04 · SERVICIOS ======================= -->
-<section class="seccion servicios" aria-labelledby="t-servicios">
+<section class="seccion servicios" id="servicios" aria-labelledby="t-servicios">
   <div class="wrap">
     <p class="kicker revelar"><span class="num">04</span>¿Qué puedo hacer por tu marca?</p>
     <h2 id="t-servicios" class="revelar" data-d="1">Publicidad que trae clientes, no solo <em>likes</em>.</h2>
@@ -647,7 +670,7 @@ em{font-style:italic}
 
   var header = document.getElementById("header");
   var wa = document.getElementById("waFlotante");
-  var heroBtn = document.querySelector(".hero__lado .boton");
+  var heroBtn = document.querySelector(".hero__ctas .boton");
   var ticking = false;
   function update(){
     var y = window.scrollY || window.pageYOffset;
