@@ -161,48 +161,16 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .cinta.is-paused .ico-pausa{display:none}
 
 /* =========================================================
-   3 · ¿Emprender era esto? (selector interactivo)
+   3 · Identidad (cuadro abstracto)
    ========================================================= */
-.emprender h2{font-size:var(--t-display);line-height:.92;letter-spacing:-.025em;margin-bottom:.75rem}
-.emprender .serif-it{font-size:1.5rem;color:var(--texto-secundario);margin-bottom:0}
-.escenario{position:relative;background:var(--azul-oceano);padding:2.5rem 0 2.5rem 12%;margin-inline:calc(var(--gutter) * -1)}
-.escenario__fotos{position:relative;aspect-ratio:4/5;width:82%}
-.escenario .foto{position:absolute;inset:0;opacity:0;transition:opacity .6s var(--ease)}
-.escenario .foto.is-activa{opacity:1}
-.opciones{margin-top:2.5rem;border-top:1px solid var(--negro-suave)}
-.opcion{border-bottom:1px solid var(--lineas)}
-.opcion__btn{width:100%;display:grid;grid-template-columns:2.5rem 1fr auto;gap:.75rem;align-items:baseline;text-align:left;padding:1.4rem 0;font-family:var(--f-titulo);font-size:clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);line-height:1.1;transition:color .3s var(--ease)}
-.opcion__btn .rom{font-style:italic;font-size:.7em;color:var(--texto-secundario)}
-.opcion__btn .mas{font-family:var(--f-texto);font-size:1.25rem;line-height:1;transition:transform .35s var(--ease)}
-.opcion__btn[aria-expanded="true"] .mas{transform:rotate(45deg)}
-.js .opcion__btn[aria-expanded="false"]{color:var(--texto-secundario)}
-.js .opcion__btn[aria-expanded="false"]:hover{color:var(--negro-suave)}
-.opcion__panel{padding:0 0 1.75rem 3.25rem}
-.opcion__panel p{margin:0 0 1rem;max-width:46ch;color:var(--texto-secundario)}
-.opcion__panel .respuesta{color:var(--negro-suave);font-weight:600;padding-left:1rem;border-left:2px solid var(--azul-oceano);margin:0}
-.no-js .opcion__btn .mas,.no-js .servicio__btn .mas{display:none}
-
-.probaste{background:var(--lino);padding-block:clamp(4rem, 3rem + 4vw, 7rem)}
-.probaste h3{margin-bottom:1.5rem}
-.intentos li{display:grid;grid-template-columns:1.5rem 1fr;padding:1rem 0;border-top:1px solid var(--lineas)}
-.intentos li::before{content:"—";color:var(--texto-secundario)}
-.conclusion{margin:clamp(3rem, 2rem + 4vw, 5rem) 0 1rem;padding-top:2.25rem;border-top:1px solid var(--negro-suave);font-family:var(--f-titulo);font-size:clamp(1.875rem, 1.4rem + 2vw, 3rem);line-height:1.1;letter-spacing:-.01em}
-.probaste .serif-it{font-size:1.375rem;color:var(--texto-secundario);margin:0}
+.identidad{overflow-x:clip}
+.identidad__cuadro{aspect-ratio:380/512;width:78%;margin-left:auto;background:var(--lino);outline:1px solid var(--negro-suave);outline-offset:14px}
+.identidad h2{font-size:var(--t-display);line-height:.92;letter-spacing:-.025em;margin-bottom:1.75rem;max-width:14ch}
+.identidad__bajada{font-size:1.125rem;line-height:1.6;color:var(--texto-secundario);max-width:40ch;margin:0;padding-top:1.5rem;border-top:1px solid var(--negro-suave)}
+.no-js .servicio__btn .mas{display:none}
 
 /* =========================================================
-   4 · Costo (carmesí)
-   ========================================================= */
-.costo{background:var(--carmesi);color:var(--blanco)}
-.costo .kicker{color:var(--lino)}
-.costo h2{font-size:var(--t-display);line-height:.92;letter-spacing:-.025em;max-width:15ch}
-.costo h2 em{color:var(--rosa-chicle)}
-.consecuencias{margin-top:clamp(3rem, 2rem + 4vw, 5.5rem);display:grid;gap:0}
-.consecuencias li{display:grid;grid-template-columns:3rem 1fr;gap:1rem;padding:1.4rem 0;border-top:1px solid rgba(250,249,246,.3);font-family:var(--f-titulo);font-size:clamp(1.375rem, 1.2rem + .8vw, 1.875rem);line-height:1.2}
-.consecuencias .n{font-family:var(--f-texto);font-size:.8125rem;font-weight:600;letter-spacing:.08em;padding-top:.55em;color:var(--lino)}
-.costo .marcador{display:inline-block;color:var(--rosa-chicle);font-size:clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);transform:rotate(-3deg);margin-top:2.75rem}
-
-/* =========================================================
-   5 · Meta Ads (oliva, imagen a la izquierda)
+   4 · Meta Ads (oliva, imagen a la izquierda)
    ========================================================= */
 .meta{background:var(--oliva);color:var(--blanco);display:grid;grid-template-columns:1fr}
 .meta__foto{aspect-ratio:4/5;background:var(--oliva-oscuro)}
@@ -221,9 +189,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .fuerte strong{display:block;font-family:var(--f-titulo);font-weight:400;font-size:1.75rem;line-height:1.1;margin-bottom:.5rem}
 
 /* =========================================================
-   6 · Servicios complementarios (lista + imagen que cambia)
+   5 · Servicios complementarios (lista + imagen que cambia)
    ========================================================= */
 .extras h2{max-width:20ch;margin-bottom:clamp(2.5rem, 2rem + 3vw, 4.5rem)}
+.escenario__fotos{position:relative;aspect-ratio:4/5;width:82%}
 .extras__escenario{position:relative;background:var(--verde-acido);padding:2rem 0 2rem 12%;margin:0 calc(var(--gutter) * -1)}
 .extras__escenario .escenario__fotos{width:70%}
 .extras__escenario .foto{position:absolute;inset:0;opacity:0;transition:opacity .6s var(--ease)}
@@ -249,7 +218,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .quien .foto__pendiente{color:var(--texto-secundario)}
 .quien__pie{font-size:1.375rem;line-height:1.25;margin:1rem 0 0}
 .relato p:first-child::first-letter{font-family:var(--f-titulo);float:left;font-size:4.6em;line-height:.8;padding:.06em .1em 0 0}
-.esencia{font-family:var(--f-titulo);font-style:italic;font-size:clamp(2rem, 1.4rem + 2.4vw, 3.5rem);line-height:1.05;letter-spacing:-.01em;margin:2.5rem 0;padding-block:1.75rem;border-block:1px solid var(--negro-suave)}
 .cita{font-family:var(--f-titulo);font-size:var(--t-lead);line-height:1.2;margin:2rem 0}
 .cita strong{font-weight:400}
 .pilares{margin-top:3rem;display:grid;gap:0}
@@ -275,7 +243,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
    ========================================================= */
 .porque{padding-bottom:0}
 .porque h2{max-width:12ch}
-.porque__arte{aspect-ratio:4/5;width:min(70%, 340px);margin-top:2.5rem}
 .motivos li{display:grid;grid-template-columns:2.75rem 1fr;padding:1.6rem 0;border-top:1px solid var(--lineas)}
 .motivos li:last-child{border-bottom:1px solid var(--lineas)}
 .motivos .n{font-size:.8125rem;font-weight:600;letter-spacing:.08em;color:var(--texto-secundario);padding-top:.55em}
@@ -326,7 +293,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .js .revela img,.hero__collage img{clip-path:none;transition:none;animation:none}
   .cinta__pista{animation:none}
   .cinta__pausa{display:none}
-  .escenario .foto,.extras__escenario .foto,.boton,.flecha,.wa-flotante{transition:none}
+  .extras__escenario .foto,.boton,.flecha,.wa-flotante{transition:none}
 }
 
 /* =========================================================
@@ -334,9 +301,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
    ========================================================= */
 @media (min-width:640px){
   .hero__collage{width:62%}
-  .escenario__fotos,.extras__escenario .escenario__fotos{width:50%}
-  .intentos{display:grid;grid-template-columns:1fr 1fr;column-gap:2.5rem}
-  .consecuencias{grid-template-columns:1fr 1fr;column-gap:2.5rem}
+  .extras__escenario .escenario__fotos{width:50%}
   .pilares{grid-template-columns:repeat(3,1fr);gap:1.5rem}
 }
 @media (min-width:768px){
@@ -362,22 +327,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .hero__collage .foto{height:100%}
   .hero .nota{right:auto;left:calc(100% - 3rem);bottom:40%}
 
-  /* Emprender: texto izq, escenario der */
-  .emprender__texto{grid-column:1 / span 6;grid-row:1}
-  .emprender__escena{grid-column:8 / -1;grid-row:1;align-self:start;position:sticky;top:calc(var(--header) + 2rem)}
-  .escenario{margin:0;padding:2.5rem 0 2.5rem 14%}
-  .escenario__fotos{width:78%}
-  .opciones{margin-top:3rem}
-  .probaste__titulo{grid-column:1 / span 4}
-  .intentos{grid-column:6 / -1}
-  .conclusion{grid-column:1 / span 9}
-  .probaste .serif-it{grid-column:10 / -1;align-self:end;justify-self:end;margin-bottom:1rem}
-
-  .costo__lista,.costo__pie{grid-column:1 / -1}
-  .consecuencias{grid-template-columns:repeat(4,1fr);column-gap:1.5rem}
-  .consecuencias li{grid-template-columns:1fr;gap:1.25rem;padding-top:1.25rem}
-  .costo__pie{text-align:right}
-
   .meta{grid-template-columns:5fr 7fr}
   .meta__contenido{padding:7rem max(var(--gutter), calc((100vw - var(--max)) / 2)) 7rem 5rem}
   .pilares-meta{display:grid;grid-template-columns:repeat(3,1fr);column-gap:2rem;margin-bottom:.5rem}
@@ -390,6 +339,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .servicio__btn .mas{display:none}
   .js .lista-servicios.tiene-activo .servicio:not(.is-activo){opacity:.45}
 
+  .identidad .grid{align-items:center}
+  .identidad__cuadro{grid-column:1 / span 5;width:100%;margin:0}
+  .identidad__texto{grid-column:7 / -1}
   .quien__foto{grid-column:1 / span 5}
   .quien__foto > div{position:sticky;top:calc(var(--header) + 2rem)}
   .quien__texto{grid-column:7 / -1}
@@ -407,8 +359,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .footer__grid{grid-template-columns:auto 1fr auto;gap:4rem}
 }
 @media (max-width:1023.98px){
-  .extras__escena,.emprender__escena{order:-1}
-  .emprender .escenario{margin-top:-1rem}
+  .extras__escena{order:-1}
 }
 </style>
 </head>
@@ -481,93 +432,21 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   </button>
 </div>
 
-<!-- ======================= 3 · ¿EMPRENDER ERA ESTO? ======================= -->
-<section class="seccion emprender" aria-labelledby="t-emprender">
-  <div class="wrap grid" data-selector="casos">
-    <div class="emprender__texto">
-      <p class="kicker revelar">¿Te pasa algo de esto?</p>
-      <h2 id="t-emprender" class="revelar" data-d="1">¿Emprender era <em>esto</em>?</h2>
-      <p class="serif-it revelar" data-d="1">¿En cuál te ves?</p>
-
-      <div class="opciones">
-        <div class="opcion">
-          <h3><button class="opcion__btn" type="button" aria-expanded="true" aria-controls="caso-1" data-opcion="0"><span class="rom" aria-hidden="true">i.</span><span>“Ya pauté, pero nadie me daba bola.”</span><span class="mas" aria-hidden="true">+</span></button></h3>
-          <div class="opcion__panel" id="caso-1">
-            <p>Trabajaste con una agencia y sentías que eras un cliente más: respuestas tarde, reportes que no entendías y poca conexión con tu marca.</p>
-            <p class="respuesta">Hablás siempre conmigo, que conozco tu marca de punta a punta.</p>
-          </div>
-        </div>
-        <div class="opcion">
-          <h3><button class="opcion__btn" type="button" aria-expanded="true" aria-controls="caso-2" data-opcion="1"><span class="rom" aria-hidden="true">ii.</span><span>“Me lo hacía un conocido.”</span><span class="mas" aria-hidden="true">+</span></button></h3>
-          <div class="opcion__panel" id="caso-2">
-            <p>Alguien de confianza te daba una mano, pero entre sus cosas, tu comunicación siempre quedaba para después.</p>
-            <p class="respuesta">Una sola persona de punta a punta: la que arma tu estrategia es la misma que te la explica.</p>
-          </div>
-        </div>
-        <div class="opcion">
-          <h3><button class="opcion__btn" type="button" aria-expanded="true" aria-controls="caso-3" data-opcion="2"><span class="rom" aria-hidden="true">iii.</span><span>“Nunca arranqué con lo digital.”</span><span class="mas" aria-hidden="true">+</span></button></h3>
-          <div class="opcion__panel" id="caso-3">
-            <p>Sabés que tenés que estar, pero no sabés por dónde empezar, y aparecer en redes te da más pereza que ganas.</p>
-            <p class="respuesta">Ordenamos juntos tu comunicación digital y definimos los próximos pasos.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="emprender__escena">
-      <div class="escenario">
-        <div class="escenario__fotos">
-          <figure class="foto is-activa" data-figura="0">
-            <img src="img/caos-digital.webp" alt="Teléfono antiguo con el cable enredado sobre fondo rojo" width="381" height="508" loading="lazy">
-          </figure>
-          <!-- Pendiente: img/caos-mar.webp (4:5) -->
-          <figure class="foto" data-figura="1">
-            <span class="foto__pendiente">Foto pendiente · caos-mar.webp · 4:5</span>
-            <img src="img/caos-mar.webp" alt="" width="1080" height="1350" loading="lazy" onerror="this.remove()">
-          </figure>
-          <figure class="foto" data-figura="2">
-            <img src="img/productos-digitales.webp" alt="Un huevo dorado dentro de una caja de cartón sobre fondo amarillo" width="381" height="512" loading="lazy">
-          </figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="probaste" aria-labelledby="t-probaste">
+<!-- ======================= 3 · IDENTIDAD ======================= -->
+<section class="seccion identidad" aria-labelledby="t-identidad">
   <div class="wrap grid">
-    <div class="probaste__titulo"><h3 id="t-probaste" class="revelar">¿Ya probaste esto?</h3></div>
-    <ul class="intentos revelar" data-d="1">
-      <li>Darle “Promocionar” a un posteo y esperar.</li>
-      <li>Mensajes automáticos sin nadie que haga el seguimiento.</li>
-      <li>Subir una foto cada tanto.</li>
-      <li>Pedirle un plan a la IA y seguirlo al pie de la letra.</li>
-      <li>Arrancar con todo y abandonar al mes.</li>
-      <li>Pagar una agencia cara y no poder sostenerla hasta ver resultados.</li>
-    </ul>
-    <p class="conclusion revelar">No es que te falten ganas: te faltaba un plan y alguien que lo sostenga con vos.</p>
-    <p class="serif-it revelar">Nos pasó a todos.</p>
-  </div>
-</section>
-
-<!-- ======================= 4 · COSTO ======================= -->
-<section class="seccion costo" aria-labelledby="t-costo">
-  <div class="wrap grid">
-    <div class="costo__lista">
-      <p class="kicker revelar">¿Y si seguís como hasta ahora?</p>
-      <h2 id="t-costo" class="revelar" data-d="1">Hacer siempre lo mismo también tiene un <em>costo</em>.</h2>
-      <ol class="consecuencias">
-        <li class="revelar"><span class="n" aria-hidden="true">01</span><span>Tus clientes te compran una vez y no vuelven.</span></li>
-        <li class="revelar" data-d="1"><span class="n" aria-hidden="true">02</span><span>Tu marca no llega a gente nueva.</span></li>
-        <li class="revelar" data-d="2"><span class="n" aria-hidden="true">03</span><span>Ponés plata que podría estar trabajando con estrategia.</span></li>
-        <li class="revelar" data-d="2"><span class="n" aria-hidden="true">04</span><span>Y te frustrás porque no vendés lo que sabés que podrías vender.</span></li>
-      </ol>
+    <figure class="foto identidad__cuadro revela">
+      <img src="img/textura-artistica.webp" alt="Pintura abstracta con un campo verde, una franja rosa y un bloque amarillo" width="380" height="512" loading="lazy">
+    </figure>
+    <div class="identidad__texto">
+      <p class="kicker revelar">El arte de crecer sin caos</p>
+      <h2 id="t-identidad" class="revelar" data-d="1">Marketing serio, contado con <em>calma</em> y con humor.</h2>
+      <p class="identidad__bajada revelar" data-d="2">Estrategia, pauta en Meta Ads e IA para marcas que quieren crecer. Un trabajo prolijo y profesional, explicado hasta que lo entiendas al 100%.</p>
     </div>
-    <div class="costo__pie"><p class="marcador revelar">Y lo peor: tu marca pierde onda.</p></div>
   </div>
 </section>
 
-<!-- ======================= 5 · META ADS ======================= -->
+<!-- ======================= 4 · META ADS ======================= -->
 <section class="meta" id="servicios" aria-labelledby="t-meta">
   <figure class="foto meta__foto revela">
     <img src="img/meta-ads.webp" alt="Billetes enrollados dentro de un blíster de remedio sobre fondo rosa" width="380" height="508" loading="lazy">
@@ -599,7 +478,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   </div>
 </section>
 
-<!-- ======================= 6 · SERVICIOS COMPLEMENTARIOS ======================= -->
+<!-- ======================= 5 · SERVICIOS COMPLEMENTARIOS ======================= -->
 <section class="seccion extras" aria-labelledby="t-extras">
   <div class="wrap">
     <h2 id="t-extras" class="revelar">Cada marca es distinta, por eso no tengo paquetes <em>cerrados</em>.</h2>
@@ -607,13 +486,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <div class="extras__escena">
         <div class="extras__escenario">
           <div class="escenario__fotos">
+            <!-- Pendiente: img/servicio-contenido.webp (4:5) -->
             <figure class="foto is-activa" data-figura="0">
-              <img src="img/diseno-web.webp" alt="Una tecla de teclado antiguo abierta que esconde una escalera roja" width="382" height="508" loading="lazy">
-            </figure>
-            <!-- Pendiente: img/servicio-contenido.webp (4:5) · nombre nuevo, ver resumen -->
-            <figure class="foto" data-figura="1">
               <span class="foto__pendiente">Foto pendiente · servicio-contenido.webp · 4:5</span>
               <img src="img/servicio-contenido.webp" alt="" width="1080" height="1350" loading="lazy" onerror="this.remove()">
+            </figure>
+            <figure class="foto" data-figura="1">
+              <img src="img/diseno-web.webp" alt="Una tecla de teclado antiguo abierta que esconde una escalera roja" width="382" height="508" loading="lazy">
             </figure>
             <figure class="foto" data-figura="2">
               <img src="img/inteligencia-artificial.webp" alt="Una mano humana y una mano robótica juegan al ajedrez" width="382" height="512" loading="lazy">
@@ -624,35 +503,27 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <div class="extras__lista">
         <ul class="lista-servicios">
           <li class="servicio">
-            <h3><button class="servicio__btn" type="button" aria-expanded="true" aria-controls="serv-1" data-opcion="0"><span class="n" aria-hidden="true">01</span><span class="titulo">Webs y landings</span><span class="mas" aria-hidden="true">+</span></button></h3>
+            <h3><button class="servicio__btn" type="button" aria-expanded="true" aria-controls="serv-1" data-opcion="0"><span class="n" aria-hidden="true">01</span><span class="titulo">Estrategia de contenido orgánico</span><span class="mas" aria-hidden="true">+</span></button></h3>
             <div class="servicio__panel" id="serv-1">
-              <p class="serif-it">¿Tu web no te trae consultas?</p>
-              <p>Mejoro tu web o armo una landing pensada para vender, con ayuda de la IA.</p>
-            </div>
-          </li>
-          <li class="servicio">
-            <h3><button class="servicio__btn" type="button" aria-expanded="true" aria-controls="serv-2" data-opcion="1"><span class="n" aria-hidden="true">02</span><span class="titulo">Estrategia de contenido orgánico</span><span class="mas" aria-hidden="true">+</span></button></h3>
-            <div class="servicio__panel" id="serv-2">
               <p class="serif-it">¿No sabés qué publicar?</p>
               <p>Te armo la estrategia y los guiones para que vos o tu equipo los graben y publiquen con un rumbo claro.</p>
             </div>
           </li>
           <li class="servicio">
-            <h3><button class="servicio__btn" type="button" aria-expanded="true" aria-controls="serv-3" data-opcion="2"><span class="n" aria-hidden="true">03</span><span class="titulo">Asesoramiento digital</span><span class="mas" aria-hidden="true">+</span></button></h3>
-            <div class="servicio__panel" id="serv-3">
-              <p class="serif-it">¿No sabés por dónde empezar?</p>
-              <p>Ordenamos juntos tu comunicación digital y definimos los próximos pasos.</p>
+            <h3><button class="servicio__btn" type="button" aria-expanded="true" aria-controls="serv-2" data-opcion="1"><span class="n" aria-hidden="true">02</span><span class="titulo">Diseño y desarrollo web</span><span class="mas" aria-hidden="true">+</span></button></h3>
+            <div class="servicio__panel" id="serv-2">
+              <p class="serif-it">¿Tu web no te trae consultas?</p>
+              <p>Mejoro tu web o armo una landing pensada para vender, con ayuda de la IA.</p>
             </div>
           </li>
-          <!-- PREPARADO, SIN PUBLICAR: servicios de IA y productos digitales.
-               Imágenes reservadas: img/servicio-ia.webp e img/productos-digitales.webp.
-               Activar cuando haya textos aprobados para cada servicio. Plantilla:
           <li class="servicio">
-            <h3><button class="servicio__btn" type="button" aria-expanded="true" aria-controls="serv-4" data-opcion="3"><span class="n" aria-hidden="true">04</span><span class="titulo">[Nombre del servicio]</span><span class="mas" aria-hidden="true">+</span></button></h3>
-            <div class="servicio__panel" id="serv-4"><p class="serif-it">[Pregunta]</p><p>[Descripción aprobada]</p></div>
+            <h3><button class="servicio__btn" type="button" aria-expanded="true" aria-controls="serv-3" data-opcion="2"><span class="n" aria-hidden="true">03</span><span class="titulo">Inteligencia artificial aplicada a negocios</span><span class="mas" aria-hidden="true">+</span></button></h3>
+            <div class="servicio__panel" id="serv-3">
+              <!-- TEXTO PROVISORIO PARA APROBAR -->
+              <p class="serif-it">¿Querés sumar IA sin perder tu esencia?</p>
+              <p>Incorporo herramientas de IA a tu comunicación y a tus procesos, con criterio y a la medida de tu negocio.</p>
+            </div>
           </li>
-          y sumar en .escenario__fotos: <figure class="foto" data-figura="3">…img/servicio-ia.webp…</figure>
-          -->
         </ul>
         <div class="extras__cta revelar">
           <a class="boton boton--negro js-wa" href="#" target="_blank" rel="noopener">Trabajemos en tu marca <span class="flecha" aria-hidden="true">→</span></a>
@@ -662,72 +533,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   </div>
 </section>
 
-<!-- ======================= 7 · QUIÉN ESTÁ DETRÁS ======================= -->
-<section class="seccion quien" id="sobre-mi" aria-labelledby="t-quien">
-  <div class="wrap">
-    <p class="kicker revelar">¿Quién está detrás?</p>
-    <h2 id="t-quien" class="revelar" data-d="1">Hoy SP Agency soy yo: <em>Sophie Pelleriti</em>.</h2>
-    <div class="grid">
-      <div class="quien__foto">
-        <div>
-          <!-- Pendiente: img/retrato.webp (4:5) · retrato real de Sophie -->
-          <figure class="foto foto--45 revela">
-            <span class="foto__pendiente">Foto pendiente · retrato.webp · 4:5</span>
-            <img src="img/retrato.webp" alt="Sophie Pelleriti" width="1080" height="1350" loading="lazy" onerror="this.remove()">
-          </figure>
-          <p class="serif-it quien__pie">Firme con tus metas, flexible con los caminos.</p>
-        </div>
-      </div>
-      <div class="quien__texto">
-        <div class="relato revelar">
-          <p>De chica inventaba cuentos, miraba cine y soñaba con tener mi canal de YouTube. La creatividad siempre estuvo. Las ventas llegaron después, y de casualidad.</p>
-          <p>Vengo del real estate, un rubro de ticket alto, donde cada venta es grande y cada cliente se cuida como oro. Entré sin haber vendido nunca nada (y menos un terreno) y descubrí que era buena: resolutiva, atenta y con clientes que volvían. Llegué a supervisora y, mientras tanto, marketing siempre me llamó la atención: era el área más creativa y divertida de la empresa, y yo quería ser parte de esa tribu.</p>
-        </div>
-        <p class="esencia revelar">Marketing serio, contado con calma y con humor.</p>
-        <p class="cita revelar"><strong>Como gestora de leads aprendí lo que hoy aplico en cada campaña: cuidar cada peso invertido y que ningún lead quede sin seguimiento.</strong></p>
-        <p class="revelar">Hoy llevo todo eso a la comunicación digital. Acompaño a marcas desde la estrategia hasta la pauta. Una sola persona de punta a punta: la que arma tu estrategia es la misma que te la explica.</p>
-        <dl class="pilares revelar">
-          <div><dt>Cuidado</dt><dd>de tu inversión, de tus clientes y de tu marca.</dd></div>
-          <div><dt>Seguimiento</dt><dd>ninguna consulta ni lead queda sin respuesta.</dd></div>
-          <div><dt>Flexibilidad</dt><dd>formal o descontracturado, a tu ritmo. Lo que importa es la intención y la estrategia.</dd></div>
-        </dl>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= 8 · CÓMO TRABAJAMOS ======================= -->
-<section class="seccion como" id="como" aria-labelledby="t-como">
-  <div class="wrap">
-    <p class="kicker revelar">¿Cómo es trabajar conmigo?</p>
-    <h2 id="t-como" class="revelar" data-d="1">Ordenado, claro y <em>sin vueltas</em>.</h2>
-    <ol>
-      <li class="paso revelar"><span class="paso__n" aria-hidden="true">01</span><h3>Nos conocemos</h3><p>Hacemos una reunión para que me cuentes de tu marca y me conozcas. Hablamos de tus objetivos, de cómo trabajo y de los valores del servicio.</p></li>
-      <li class="paso revelar"><span class="paso__n" aria-hidden="true">02</span><h3>Me pasás lo necesario</h3><p>Accesos, brief de marca, objetivos y presupuesto. Con eso arranco.</p></li>
-      <li class="paso revelar"><span class="paso__n" aria-hidden="true">03</span><h3>Lanzamos en menos de una semana</h3><p>Mientras me vas pasando la información, yo ya voy trabajando. Apenas tengo todo, la campaña sale en menos de una semana.</p></li>
-      <li class="paso revelar"><span class="paso__n" aria-hidden="true">04</span><h3>Te acompaño y te rindo cuentas</h3><p>El primer mes el contacto es más cercano, para ajustar todo. Después seguimos en contacto de forma fluida, sin horarios rígidos: mi compromiso es con tu objetivo. Y al cierre de cada mes te entrego un informe con resultados y próximos pasos.</p></li>
-    </ol>
-    <p class="serif-it revelar">Ordenado, pero sin rigidez.</p>
-  </div>
-</section>
-
-<section class="antes" aria-labelledby="t-antes">
-  <div class="wrap">
-    <p class="kicker revelar" id="t-antes">Antes de arrancar</p>
-    <p class="antes__texto revelar" data-d="1">Trabajo de forma remota con marcas de servicios, estés donde estés, y no hace falta que sepas de marketing. Si tenés dudas sobre cómo trabajo o sobre la inversión, te ofrezco una reunión sin costo para charlarlo y orientarte.</p>
-  </div>
-</section>
-
-<!-- ======================= 9 · POR QUÉ ======================= -->
+<!-- ======================= 6 · POR QUÉ ======================= -->
 <section class="seccion porque" aria-labelledby="t-porque">
   <div class="wrap grid">
     <div class="porque__titulo">
       <div>
         <p class="kicker revelar">¿Por qué SP Agency?</p>
         <h2 id="t-porque" class="revelar" data-d="1">Trato de agencia, cercanía de <em>persona</em>.</h2>
-        <figure class="foto porque__arte revela">
-          <img src="img/textura-artistica.webp" alt="" width="380" height="512" loading="lazy">
-        </figure>
       </div>
     </div>
     <ol class="motivos">
@@ -753,6 +565,61 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   </div>
 </section>
 
+<!-- ======================= 7 · QUIÉN ESTÁ DETRÁS ======================= -->
+<section class="seccion quien" id="sobre-mi" aria-labelledby="t-quien">
+  <div class="wrap">
+    <p class="kicker revelar">¿Quién está detrás?</p>
+    <h2 id="t-quien" class="revelar" data-d="1">Hoy SP Agency soy yo: <em>Sophie Pelleriti</em>.</h2>
+    <div class="grid">
+      <div class="quien__foto">
+        <div>
+          <!-- Pendiente: img/retrato.webp (4:5) · retrato real de Sophie -->
+          <figure class="foto foto--45 revela">
+            <span class="foto__pendiente">Foto pendiente · retrato.webp · 4:5</span>
+            <img src="img/retrato.webp" alt="Sophie Pelleriti" width="1080" height="1350" loading="lazy" onerror="this.remove()">
+          </figure>
+          <p class="serif-it quien__pie">Firme con tus metas, flexible con los caminos.</p>
+        </div>
+      </div>
+      <div class="quien__texto">
+        <div class="relato revelar">
+          <p>De chica inventaba cuentos, miraba cine y soñaba con tener mi canal de YouTube. La creatividad siempre estuvo. Las ventas llegaron después, y de casualidad.</p>
+          <p>Vengo del real estate, un rubro de ticket alto, donde cada venta es grande y cada cliente se cuida como oro. Entré sin haber vendido nunca nada (y menos un terreno) y descubrí que era buena: resolutiva, atenta y con clientes que volvían. Llegué a supervisora y, mientras tanto, marketing siempre me llamó la atención: era el área más creativa y divertida de la empresa, y yo quería ser parte de esa tribu.</p>
+        </div>
+        <p class="cita revelar"><strong>Como gestora de leads aprendí lo que hoy aplico en cada campaña: cuidar cada peso invertido y que ningún lead quede sin seguimiento.</strong></p>
+        <p class="revelar">Hoy llevo todo eso a la comunicación digital. Acompaño a marcas desde la estrategia hasta la pauta. Una sola persona de punta a punta: la que arma tu estrategia es la misma que te la explica.</p>
+        <dl class="pilares revelar">
+          <div><dt>Cuidado</dt><dd>de tu inversión, de tus clientes y de tu marca.</dd></div>
+          <div><dt>Seguimiento</dt><dd>ninguna consulta ni lead queda sin respuesta.</dd></div>
+          <div><dt>Flexibilidad</dt><dd>formal o descontracturado, a tu ritmo. Lo que importa es la intención y la estrategia.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 8 · METODOLOGÍA ======================= -->
+<section class="seccion como" id="como" aria-labelledby="t-como">
+  <div class="wrap">
+    <p class="kicker revelar">¿Cómo es trabajar conmigo?</p>
+    <h2 id="t-como" class="revelar" data-d="1">Ordenado, claro y <em>sin vueltas</em>.</h2>
+    <ol>
+      <li class="paso revelar"><span class="paso__n" aria-hidden="true">01</span><h3>Nos conocemos</h3><p>Hacemos una reunión para que me cuentes de tu marca y me conozcas. Hablamos de tus objetivos, de cómo trabajo y de los valores del servicio.</p></li>
+      <li class="paso revelar"><span class="paso__n" aria-hidden="true">02</span><h3>Me pasás lo necesario</h3><p>Accesos, brief de marca, objetivos y presupuesto. Con eso arranco.</p></li>
+      <li class="paso revelar"><span class="paso__n" aria-hidden="true">03</span><h3>Lanzamos en menos de una semana</h3><p>Mientras me vas pasando la información, yo ya voy trabajando. Apenas tengo todo, la campaña sale en menos de una semana.</p></li>
+      <li class="paso revelar"><span class="paso__n" aria-hidden="true">04</span><h3>Te acompaño y te rindo cuentas</h3><p>El primer mes el contacto es más cercano, para ajustar todo. Después seguimos en contacto de forma fluida, sin horarios rígidos: mi compromiso es con tu objetivo. Y al cierre de cada mes te entrego un informe con resultados y próximos pasos.</p></li>
+    </ol>
+    <p class="serif-it revelar">Ordenado, pero sin rigidez.</p>
+  </div>
+</section>
+
+<section class="antes" aria-labelledby="t-antes">
+  <div class="wrap">
+    <p class="kicker revelar" id="t-antes">Antes de arrancar</p>
+    <p class="antes__texto revelar" data-d="1">Trabajo de forma remota con marcas de servicios, estés donde estés, y no hace falta que sepas de marketing. Si tenés dudas sobre cómo trabajo o sobre la inversión, te ofrezco una reunión sin costo para charlarlo y orientarte.</p>
+  </div>
+</section>
+
 <!-- ======================= RESULTADOS Y PROYECTOS · PREPARADO, SIN PUBLICAR =======================
      Activar solo con proyectos, métricas y permisos reales y aprobados. Estructura sugerida:
 <section class="seccion resultados" id="resultados" aria-labelledby="t-resultados">
@@ -770,7 +637,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 </section>
 -->
 
-<!-- ======================= 10 · CIERRE ======================= -->
+<!-- ======================= 9 · CIERRE ======================= -->
 <section class="seccion cierre" id="contacto" aria-labelledby="t-cierre">
   <div class="wrap grid">
     <div class="cierre__texto-col">
@@ -851,7 +718,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         b.setAttribute("aria-expanded", on ? "true" : "false");
         var panel = document.getElementById(b.getAttribute("aria-controls"));
         if (panel) panel.hidden = !on;
-        var item = b.closest(".servicio, .opcion");
+        var item = b.closest(".servicio");
         if (item) item.classList.toggle("is-activo", on);
       });
       figs.forEach(function(f, j){ f.classList.toggle("is-activa", j === i); });
