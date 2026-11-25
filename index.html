@@ -92,6 +92,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .foto{position:relative;margin:0;overflow:hidden;background:var(--topo)}
 .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .foto--45{aspect-ratio:4/5}
+.meta__foto img{object-position:50% 55%}
 .foto__pendiente{position:absolute;inset:auto 0 0 0;padding:1rem;font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.5;color:var(--blanco)}
 .js .revela img{clip-path:inset(0 0 100% 0);transition:clip-path 1.3s var(--ease)}
 .js .revela.is-in img{clip-path:inset(0 0 0 0)}
@@ -274,6 +275,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
    ========================================================= */
 .porque{padding-bottom:0}
 .porque h2{max-width:12ch}
+.porque__arte{aspect-ratio:4/5;width:min(70%, 340px);margin-top:2.5rem}
 .motivos li{display:grid;grid-template-columns:2.75rem 1fr;padding:1.6rem 0;border-top:1px solid var(--lineas)}
 .motivos li:last-child{border-bottom:1px solid var(--lineas)}
 .motivos .n{font-size:.8125rem;font-weight:600;letter-spacing:.08em;color:var(--texto-secundario);padding-top:.55em}
@@ -515,20 +517,16 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <div class="emprender__escena">
       <div class="escenario">
         <div class="escenario__fotos">
-          <!-- Pendiente: img/caos-mar.webp (4:5) -->
           <figure class="foto is-activa" data-figura="0">
-            <span class="foto__pendiente">Foto pendiente · caos-mar.webp · 4:5</span>
-            <img src="img/caos-mar.webp" alt="Una persona entre las olas sostiene una notebook y un café para que no se mojen" width="1080" height="1350" loading="lazy" onerror="this.remove()">
+            <img src="img/caos-digital.webp" alt="Teléfono antiguo con el cable enredado sobre fondo rojo" width="381" height="508" loading="lazy">
           </figure>
-          <!-- Pendiente: img/caos-digital.webp (4:5) -->
+          <!-- Pendiente: img/caos-mar.webp (4:5) -->
           <figure class="foto" data-figura="1">
-            <span class="foto__pendiente">Foto pendiente · caos-digital.webp · 4:5</span>
-            <img src="img/caos-digital.webp" alt="Una persona medita en el piso rodeada de monitores viejos encendidos" width="1080" height="1350" loading="lazy" onerror="this.remove()">
+            <span class="foto__pendiente">Foto pendiente · caos-mar.webp · 4:5</span>
+            <img src="img/caos-mar.webp" alt="" width="1080" height="1350" loading="lazy" onerror="this.remove()">
           </figure>
-          <!-- Pendiente: img/caos-inicio.webp (4:5) · archivo agregado a la lista original -->
           <figure class="foto" data-figura="2">
-            <span class="foto__pendiente">Foto pendiente · caos-inicio.webp · 4:5</span>
-            <img src="img/caos-inicio.webp" alt="Un gato sentado frente a una computadora antigua como si estuviera por escribir" width="1080" height="1350" loading="lazy" onerror="this.remove()">
+            <img src="img/productos-digitales.webp" alt="Un huevo dorado dentro de una caja de cartón sobre fondo amarillo" width="381" height="512" loading="lazy">
           </figure>
         </div>
       </div>
@@ -571,10 +569,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
 <!-- ======================= 5 · META ADS ======================= -->
 <section class="meta" id="servicios" aria-labelledby="t-meta">
-  <!-- Pendiente: img/pauta-dosis.webp (4:5) -->
   <figure class="foto meta__foto revela">
-    <span class="foto__pendiente">Foto pendiente · pauta-dosis.webp · 4:5</span>
-    <img src="img/pauta-dosis.webp" alt="Billetes enrollados dentro de un blíster de remedio" width="1080" height="1350" loading="lazy" onerror="this.remove()">
+    <img src="img/meta-ads.webp" alt="Billetes enrollados dentro de un blíster de remedio sobre fondo rosa" width="380" height="508" loading="lazy">
   </figure>
   <div class="meta__contenido">
     <p class="kicker revelar">¿Qué puedo hacer por tu marca?</p>
@@ -611,20 +607,16 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <div class="extras__escena">
         <div class="extras__escenario">
           <div class="escenario__fotos">
-            <!-- Pendiente: img/servicio-web.webp (4:5) -->
             <figure class="foto is-activa" data-figura="0">
-              <span class="foto__pendiente">Foto pendiente · servicio-web.webp · 4:5</span>
-              <img src="img/servicio-web.webp" alt="" width="1080" height="1350" loading="lazy" onerror="this.remove()">
+              <img src="img/diseno-web.webp" alt="Una tecla de teclado antiguo abierta que esconde una escalera roja" width="382" height="508" loading="lazy">
             </figure>
             <!-- Pendiente: img/servicio-contenido.webp (4:5) · nombre nuevo, ver resumen -->
             <figure class="foto" data-figura="1">
               <span class="foto__pendiente">Foto pendiente · servicio-contenido.webp · 4:5</span>
               <img src="img/servicio-contenido.webp" alt="" width="1080" height="1350" loading="lazy" onerror="this.remove()">
             </figure>
-            <!-- Pendiente: img/servicio-asesoria.webp (4:5) · nombre nuevo, ver resumen -->
             <figure class="foto" data-figura="2">
-              <span class="foto__pendiente">Foto pendiente · servicio-asesoria.webp · 4:5</span>
-              <img src="img/servicio-asesoria.webp" alt="" width="1080" height="1350" loading="lazy" onerror="this.remove()">
+              <img src="img/inteligencia-artificial.webp" alt="Una mano humana y una mano robótica juegan al ajedrez" width="382" height="512" loading="lazy">
             </figure>
           </div>
         </div>
@@ -733,6 +725,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <div>
         <p class="kicker revelar">¿Por qué SP Agency?</p>
         <h2 id="t-porque" class="revelar" data-d="1">Trato de agencia, cercanía de <em>persona</em>.</h2>
+        <figure class="foto porque__arte revela">
+          <img src="img/textura-artistica.webp" alt="" width="380" height="512" loading="lazy">
+        </figure>
       </div>
     </div>
     <ol class="motivos">
@@ -789,10 +784,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <p class="cierre__firma revelar">Hasta que quede claro.</p>
     </div>
     <div class="cierre__foto">
-      <!-- Pendiente: img/cierre-ideas.webp (4:5) -->
       <figure class="foto foto--45 revela">
-        <span class="foto__pendiente">Foto pendiente · cierre-ideas.webp · 4:5</span>
-        <img src="img/cierre-ideas.webp" alt="Una bombilla encendida dentro de un frasco de vidrio" width="1080" height="1350" loading="lazy" onerror="this.remove()">
+        <img src="img/cierre-ideas.webp" alt="Una bombilla encendida dentro de un frasco de vidrio, en blanco y negro" width="382" height="512" loading="lazy">
       </figure>
     </div>
   </div>
