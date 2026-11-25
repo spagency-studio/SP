@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SP Agency</title>
+<meta name="description" content="Estrategia, pauta en Meta Ads e IA para marcas que quieren crecer. Un trabajo prolijo y profesional, explicado hasta que lo entiendas al 100%.">
+<meta name="theme-color" content="#FAF9F6">
+<!-- Favicon: monograma (oliva + SP en lino + punto girasol), según manual pág. 08 -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%236B7246'/%3E%3Ctext x='29' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='26' fill='%23EDE6DA'%3ESP%3C/text%3E%3Ccircle cx='47' cy='39' r='2.6' fill='%23E8B23A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   SP AGENCY · Tokens de marca (fuente: Manual de marca)
+   ========================================================= */
+:root{
+  /* Base blanco y negro */
+  --blanco:#FAF9F6;          /* fondo principal */
+  --negro-suave:#2B2B2B;     /* texto, logo, trazo */
+  /* Cálidos */
+  --lino:#EDE6DA;            /* fondo cálido */
+  --lino-claro:#F6F2EA;      /* tarjetas */
+  --topo:#8B7D6B;            /* apoyo (solo decorativo, no para texto) */
+  --texto-secundario:#6B5F51;/* topo oscuro: texto secundario */
+  --lineas:#D9CFBF;          /* separadores finos */
+  /* Identidad */
+  --oliva:#6B7246;           /* bloques y botones */
+  --oliva-oscuro:#565C36;    /* links sobre lino, hover de botones */
+  --sobre-oliva:#EDE6DA;     /* títulos grandes sobre oliva */
+  --sobre-oliva-texto:#FAF9F6;/* texto chico sobre oliva (contraste AA) */
+  /* La chispa */
+  --girasol:#E8B23A;
+  /* Pop: solo como fondo plano de collages (uno por imagen) */
+  --rojo-tomate:#D93A2B;
+  --rosa-chicle:#E9A3A8;
+  --verde-acido:#8BEA5E;     /* lo relacionado con IA */
+
+  /* Tipografía */
+  --f-titulo:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --f-texto:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-marcador:"Permanent Marker", "Comic Sans MS", cursive;
+
+  --display:clamp(2.75rem, 1.6rem + 5.2vw, 4.5rem);   /* 44 → 72 */
+  --titulo-1:clamp(2.75rem, 2.2rem + 2.2vw, 3.5rem);  /* 44 → 56 */
+  --titulo-2:clamp(1.625rem, 1.4rem + .9vw, 1.875rem);/* 26 → 30 */
+  --cuerpo:1rem;                                      /* 16 */
+  --etiqueta:.75rem;                                  /* 12 */
+
+  /* Forma */
+  --r:12px;      /* tarjetas, fotos, botones */
+  --r-tag:4px;   /* etiquetas */
+
+  --gutter:clamp(1.25rem, .8rem + 2.4vw, 4rem);
+  --max:1120px;
+  --seccion:clamp(5rem, 3.5rem + 7vw, 9rem);
+
+  /* Grano de foto analógica */
+  --grano:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--blanco);color:var(--negro-suave);
+  font-family:var(--f-texto);font-size:var(--cuerpo);line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0 0 1em}
+ul{margin:0;padding:0;list-style:none}
+h1,h2,h3{font-family:var(--f-titulo);font-weight:400;line-height:1.04;margin:0;letter-spacing:-.005em;text-wrap:balance}
+h1{font-size:var(--display)}
+h2{font-size:var(--titulo-1)}
+h3{font-size:var(--titulo-2);line-height:1.15}
+:focus-visible{outline:2px solid var(--negro-suave);outline-offset:3px;border-radius:4px}
+
+.wrap{width:100%;max-width:calc(var(--max) + var(--gutter)*2);margin-inline:auto;padding-inline:var(--gutter)}
+.seccion{padding-block:var(--seccion)}
+.centro{text-align:center}
+
+/* Punto girasol al final de un título (recurso propio del manual) */
+.punto{color:var(--girasol)}
+.c-oscuro .punto{color:var(--girasol)}
+
+/* Etiqueta: Manrope 12px, mayúsculas, 600, 0.18em */
+.etiqueta{
+  display:inline-block;font-family:var(--f-texto);font-size:var(--etiqueta);font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;line-height:1.5;color:var(--texto-secundario);
+  margin:0 0 1.25rem;border-radius:var(--r-tag);
+}
+
+.bajada{font-size:1.0625rem;color:var(--texto-secundario);max-width:36rem}
+.centro .bajada{margin-inline:auto}
+
+/* Frase en marcador */
+.marcador{
+  font-family:var(--f-marcador);font-weight:400;line-height:1.25;
+  font-size:clamp(1.375rem, 1.1rem + 1.2vw, 1.875rem);
+  display:inline-block;transform:rotate(-2deg);margin:0;
+}
+.marcador--largo{font-size:clamp(1.125rem, 1rem + .6vw, 1.375rem);max-width:34rem}
+.subrayado{position:relative;padding-bottom:.35em}
+.subrayado::after{
+  content:"";position:absolute;left:-2%;right:-2%;bottom:.05em;height:.32em;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 C40 3 80 10 120 5 S180 4 198 7' fill='none' stroke='%23E8B23A' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+}
+
+/* Botones */
+.boton{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:48px;padding:.85rem 1.6rem;border-radius:var(--r);
+  font-family:var(--f-texto);font-weight:600;font-size:1rem;letter-spacing:.01em;line-height:1.2;
+  text-decoration:none;border:1px solid transparent;cursor:pointer;
+  transition:background-color .25s ease, transform .25s ease, color .25s ease;
+}
+.boton svg{width:20px;height:20px;flex:none}
+.boton--oliva{background:var(--oliva);color:var(--sobre-oliva-texto)}
+.boton--oliva:hover{background:var(--oliva-oscuro);transform:translateY(-1px)}
+.boton--lino{background:var(--lino);color:var(--negro-suave)}
+.boton--lino:hover{background:var(--blanco);transform:translateY(-1px)}
+.boton--grande{min-height:60px;padding:1.1rem 2rem;font-size:1.0625rem}
+
+/* =========================================================
+   Logo tipográfico (horizontal / negativo)
+   Área de respeto: altura de la "P" → padding en .logo
+   ========================================================= */
+.logo{
+  display:inline-flex;align-items:center;gap:.75em;text-decoration:none;color:var(--negro-suave);
+  font-size:16px;padding:.35em 0;min-width:120px;
+}
+.logo__sp{font-family:var(--f-titulo);font-size:2.25em;line-height:1;letter-spacing:-.01em;display:inline-flex;align-items:baseline}
+.logo__punto{display:inline-block;width:.17em;height:.17em;border-radius:50%;background:var(--girasol);margin-left:.07em;transform:translateY(-.02em)}
+.logo__barra{width:1px;height:1.8em;background:currentColor;opacity:.75}
+.logo__agency{font-family:var(--f-texto);font-weight:300;font-size:.78em;letter-spacing:.34em;line-height:1;padding-top:.3em}
+.logo--negativo{color:var(--lino)}
+
+/* =========================================================
+   Header
+   ========================================================= */
+.header{
+  position:sticky;top:0;z-index:40;background:rgba(250,249,246,.92);
+  -webkit-backdrop-filter:saturate(1.2) blur(8px);backdrop-filter:saturate(1.2) blur(8px);
+  border-bottom:1px solid transparent;transition:border-color .3s ease;
+}
+.header.is-scrolled{border-bottom-color:var(--lineas)}
+.header__in{display:flex;align-items:center;justify-content:space-between;min-height:72px}
+.header .boton{display:none;min-height:42px;padding:.6rem 1.2rem;font-size:.9375rem}
+
+/* =========================================================
+   Collage (placeholder de imagen)
+   Foto B/N con grano recortada sobre fondo plano pop.
+   ========================================================= */
+.collage{
+  position:relative;margin:0;border-radius:var(--r);overflow:hidden;isolation:isolate;
+  display:grid;place-items:center;
+}
+.collage--rosa{background:var(--rosa-chicle)}
+.collage--rojo{background:var(--rojo-tomate)}
+.collage--verde{background:var(--verde-acido)}
+.collage::after{ /* grano sutil sobre el fondo plano */
+  content:"";position:absolute;inset:0;background-image:var(--grano);opacity:.12;mix-blend-mode:multiply;pointer-events:none;z-index:2;
+}
+.collage__foto{
+  position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:center;
+  background:
+    radial-gradient(120% 80% at 50% 0%, #cfcfcf 0%, #8d8d8d 55%, #4a4a4a 100%);
+  filter:grayscale(1) contrast(1.05);
+  box-shadow:0 18px 40px -18px rgba(0,0,0,.35);
+}
+.collage__foto::before{ /* grano de película */
+  content:"";position:absolute;inset:0;background-image:var(--grano);opacity:.5;mix-blend-mode:overlay;
+}
+.collage__nota{
+  position:relative;font-family:var(--f-texto);font-size:.75rem;line-height:1.45;font-weight:600;
+  color:#fff;background:rgba(43,43,43,.78);padding:.6rem .75rem;margin:.75rem;border-radius:var(--r-tag);
+  max-width:30ch;text-align:left;letter-spacing:.01em;
+}
+.sticker{
+  position:absolute;z-index:3;background:var(--blanco);color:var(--negro-suave);
+  padding:.55rem 1rem .65rem;border-radius:4px;box-shadow:0 8px 22px -10px rgba(0,0,0,.35);
+  white-space:nowrap;
+}
+
+/* =========================================================
+   1 · HERO
+   ========================================================= */
+.hero{padding-top:clamp(3rem, 2rem + 5vw, 6rem);padding-bottom:var(--seccion)}
+.hero h1{max-width:17ch;margin:0 auto 1.5rem}
+.hero .bajada{margin-bottom:2rem}
+.hero .collage{margin-top:clamp(3rem, 2rem + 4vw, 5rem);aspect-ratio:4/5}
+.hero .collage__foto{width:64%;aspect-ratio:4/5;border-radius:6px;clip-path:polygon(2% 3%, 97% 0, 100% 96%, 1% 100%)}
+.hero .sticker{left:50%;bottom:8%;transform:translateX(-50%) rotate(-3deg)}
+
+/* =========================================================
+   2 · Espejo del dolor
+   ========================================================= */
+.espejo h2{margin-bottom:clamp(2.5rem, 2rem + 2vw, 3.5rem)}
+.tarjetas{display:grid;gap:1rem}
+.tarjeta{background:var(--lino-claro);border-radius:var(--r);padding:clamp(1.5rem, 1.2rem + 1vw, 2rem);border:1px solid var(--lineas)}
+.tarjeta h3{margin-bottom:.9rem}
+.tarjeta p{color:var(--texto-secundario);margin:0}
+
+.probaste{margin-top:clamp(4rem, 3rem + 4vw, 6rem);display:grid;gap:2.5rem}
+.probaste h3{font-size:var(--titulo-2);margin-bottom:1.5rem}
+.checklist li{
+  display:flex;gap:.9rem;align-items:flex-start;padding:.95rem 0;border-top:1px solid var(--lineas);
+}
+.checklist li:last-child{border-bottom:1px solid var(--lineas)}
+.check{
+  flex:none;width:20px;height:20px;margin-top:.2rem;border-radius:4px;background:var(--girasol);
+  display:grid;place-items:center;
+}
+.check svg{width:12px;height:12px}
+.cierre-espejo{align-self:center}
+.cierre-espejo p:not(.marcador){font-family:var(--f-titulo);font-size:var(--titulo-2);line-height:1.2;margin-bottom:1.75rem;max-width:22ch}
+
+/* =========================================================
+   3 · El costo de seguir igual (alto contraste)
+   ========================================================= */
+.costo{background:var(--negro-suave);color:var(--lino)}
+.costo .etiqueta{color:var(--lino);opacity:.85}
+.costo h2{max-width:16ch;margin-bottom:clamp(2.5rem, 2rem + 2vw, 3.5rem)}
+.costo__lista li{
+  display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:baseline;
+  padding:1.15rem 0;border-top:1px solid rgba(237,230,218,.18);font-size:1.0625rem;
+}
+.costo__lista li:last-child{border-bottom:1px solid rgba(237,230,218,.18)}
+.costo__lista li::before{content:"";width:18px;height:1px;background:var(--lino);transform:translateY(-.3em)}
+.costo .marcador{color:var(--girasol);margin-top:clamp(2.5rem, 2rem + 2vw, 3.5rem)}
+
+/* =========================================================
+   4 · Quién está detrás
+   ========================================================= */
+.quien{background:var(--lino)}
+.quien .etiqueta{color:var(--texto-secundario)}
+.quien__grid{display:grid;gap:clamp(2.5rem, 2rem + 3vw, 5rem);align-items:start}
+.quien h2{margin-bottom:2rem;max-width:14ch}
+.quien__texto p{color:var(--negro-suave)}
+.quien__texto p.destacado{font-weight:600}
+/* Contenedor preparado para foto vertical editorial (4:5). Reemplazar el contenido de .collage por <img> con object-fit:cover */
+.quien .collage{aspect-ratio:4/5;width:100%}
+.quien .collage__foto{width:62%;aspect-ratio:3/4;border-radius:6px;clip-path:polygon(0 2%, 98% 0, 100% 100%, 3% 97%)}
+.quien .collage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.pilares{display:grid;gap:1.75rem;margin-top:clamp(3rem, 2.5rem + 2vw, 4rem)}
+.pilar{border-top:2px solid var(--negro-suave);padding-top:1rem}
+.pilar h3{margin-bottom:.4rem}
+.pilar p{margin:0;color:var(--texto-secundario)}
+.quien .marcador{margin-top:clamp(2.5rem, 2rem + 2vw, 3.5rem)}
+
+/* =========================================================
+   5 · Servicios
+   ========================================================= */
+.servicios h2{max-width:15ch;margin-bottom:clamp(2.5rem, 2rem + 2vw, 3.5rem)}
+.servicios__grid{display:grid;gap:1rem}
+.destacada{
+  background:var(--oliva);color:var(--sobre-oliva-texto);border-radius:var(--r);
+  padding:clamp(1.75rem, 1.3rem + 2vw, 3rem);display:grid;gap:2rem;
+}
+.destacada h3{font-size:clamp(2.25rem, 1.9rem + 1.6vw, 3rem);color:var(--sobre-oliva);margin-bottom:1rem}
+.destacada__intro{margin-bottom:1.5rem;max-width:34rem}
+.destacada__lista li{display:grid;grid-template-columns:auto 1fr;gap:.85rem;padding:.75rem 0;border-top:1px solid rgba(250,249,246,.22)}
+.destacada__lista li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sobre-oliva-texto);transform:translateY(.65em)}
+.recuadro{background:var(--lino-claro);color:var(--negro-suave);border-radius:var(--r);padding:clamp(1.25rem, 1rem + 1vw, 1.75rem);align-self:start}
+.recuadro p{margin:0}
+.recuadro strong{display:block;font-family:var(--f-titulo);font-weight:400;font-size:var(--titulo-2);line-height:1.15;margin-bottom:.6rem}
+
+.chica{background:var(--lino-claro);border:1px solid var(--lineas);border-radius:var(--r);padding:clamp(1.5rem, 1.2rem + 1vw, 2rem)}
+.chica h3{margin-bottom:1rem}
+.chica p{margin:0;color:var(--texto-secundario)}
+.chica p strong{display:block;color:var(--negro-suave);font-weight:600;margin-bottom:.25rem}
+
+.servicios__cierre{margin-top:clamp(3rem, 2.5rem + 2vw, 4rem);display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center}
+.servicios__cierre p{font-family:var(--f-titulo);font-size:var(--titulo-2);line-height:1.2;margin:0;max-width:24ch}
+
+/* =========================================================
+   6 · Cómo trabajamos
+   ========================================================= */
+.como{background:var(--lino-claro);border-block:1px solid var(--lineas)}
+.como h2{margin-bottom:clamp(2.5rem, 2rem + 2vw, 3.5rem)}
+.pasos{display:grid;gap:2.25rem;counter-reset:paso}
+.paso{border-top:2px solid var(--negro-suave);padding-top:1.1rem}
+.paso__n{font-family:var(--f-titulo);font-size:2.5rem;line-height:1;display:block;margin-bottom:.75rem;color:var(--negro-suave)}
+.paso h3{margin-bottom:.75rem}
+.paso p{margin:0;color:var(--texto-secundario)}
+.como .marcador{margin-top:clamp(3rem, 2.5rem + 2vw, 4rem)}
+
+/* =========================================================
+   7 · ¿Por qué SP Agency?
+   ========================================================= */
+.porque h2{max-width:14ch;margin-bottom:clamp(2.5rem, 2rem + 2vw, 3.5rem)}
+.porque__grid{display:grid;gap:clamp(2.5rem, 2rem + 3vw, 4rem)}
+.motivos{display:grid;gap:0}
+.motivo{padding:1.35rem 0;border-top:1px solid var(--lineas)}
+.motivo:last-child{border-bottom:1px solid var(--lineas)}
+.motivo h3{margin-bottom:.4rem}
+.motivo p{margin:0;color:var(--texto-secundario)}
+.noves{background:var(--negro-suave);color:var(--lino);border-radius:var(--r);padding:clamp(1.75rem, 1.3rem + 2vw, 2.75rem);align-self:start}
+.noves h3{color:var(--lino);margin-bottom:1.25rem}
+.noves li{display:grid;grid-template-columns:auto 1fr;gap:.85rem;padding:.85rem 0;border-top:1px solid rgba(237,230,218,.18)}
+.noves li::before{content:"×";font-size:1.1rem;line-height:1.4}
+.porque .marcador{margin-top:clamp(3rem, 2.5rem + 2vw, 4rem)}
+
+/* =========================================================
+   8 · Antes de arrancar
+   ========================================================= */
+.antes{position:relative;overflow:hidden;padding-top:calc(var(--seccion) + 2rem)}
+.sol{ /* sol naciente: medio círculo girasol que asoma */
+  position:absolute;left:50%;top:0;width:120px;height:60px;transform:translateX(-50%);
+  background:var(--girasol);border-radius:0 0 120px 120px;
+}
+.antes p.antes__texto{
+  font-family:var(--f-titulo);font-size:clamp(1.5rem, 1.25rem + 1.1vw, 2.125rem);line-height:1.3;
+  max-width:30ch;margin:0 auto;text-wrap:pretty;
+}
+
+/* =========================================================
+   9 · Cierre
+   ========================================================= */
+.cierre{background:var(--oliva);color:var(--sobre-oliva-texto)}
+.cierre .etiqueta{color:var(--sobre-oliva-texto)}
+.cierre h2{color:var(--sobre-oliva);font-size:var(--display);margin:0 auto 1.5rem;max-width:12ch}
+.cierre p.cierre__texto{max-width:32rem;margin:0 auto 2.25rem;font-size:1.0625rem}
+.cierre .marcador{color:var(--sobre-oliva);margin-top:2.5rem}
+
+/* =========================================================
+   10 · Footer
+   ========================================================= */
+.footer{background:var(--negro-suave);color:var(--lino);padding-block:clamp(3.5rem, 3rem + 3vw, 5rem) 2rem}
+.footer__grid{display:grid;gap:2rem;align-items:end}
+.footer__frases p{margin:0}
+.footer__frases .lema{font-family:var(--f-titulo);font-style:italic;font-size:1.375rem;margin-top:.35rem}
+.redes{display:flex;gap:.75rem}
+.redes a{
+  width:48px;height:48px;display:grid;place-items:center;border-radius:var(--r);
+  border:1px solid rgba(237,230,218,.3);color:var(--lino);transition:background-color .25s ease,color .25s ease;
+}
+.redes a:hover{background:var(--lino);color:var(--negro-suave)}
+.redes svg{width:22px;height:22px}
+.footer__legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(237,230,218,.18);font-size:.8125rem;color:var(--lino);opacity:.8}
+
+/* =========================================================
+   Botón flotante de WhatsApp (mobile)
+   ========================================================= */
+.wa-flotante{
+  position:fixed;right:16px;bottom:16px;z-index:50;width:58px;height:58px;border-radius:50%;
+  background:var(--oliva);color:var(--sobre-oliva-texto);display:grid;place-items:center;
+  box-shadow:0 10px 30px -8px rgba(43,43,43,.45);
+  opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;
+  transition:opacity .35s ease, transform .35s ease, background-color .25s ease;
+}
+.wa-flotante svg{width:28px;height:28px}
+.wa-flotante.is-visible{opacity:1;transform:none;pointer-events:auto}
+.wa-flotante:hover{background:var(--oliva-oscuro)}
+
+/* =========================================================
+   Animación suave al hacer scroll
+   ========================================================= */
+.revelar{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.65,.25,1), transform .9s cubic-bezier(.2,.65,.25,1)}
+.revelar.is-in{opacity:1;transform:none}
+.revelar[data-d="1"]{transition-delay:.08s}
+.revelar[data-d="2"]{transition-delay:.16s}
+.revelar[data-d="3"]{transition-delay:.24s}
+.no-js .revelar{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .revelar{opacity:1;transform:none;transition:none}
+  .boton,.wa-flotante{transition:none}
+}
+
+/* =========================================================
+   Breakpoints (mobile first)
+   ========================================================= */
+@media (min-width:640px){
+  .hero .collage{aspect-ratio:2/1}
+  .hero .collage__foto{width:30%}
+  .tarjetas{grid-template-columns:repeat(3,1fr)}
+  .tarjetas .tarjeta{display:flex;flex-direction:column}
+  .pilares{grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .chicas{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .pasos{grid-template-columns:repeat(2,1fr);gap:2.5rem 2rem}
+}
+@media (max-width:639.98px){
+  .chicas{display:grid;gap:1rem}
+  .tarjetas{grid-template-columns:1fr}
+}
+@media (min-width:768px){
+  .header .boton{display:inline-flex}
+  .wa-flotante{display:none}
+  .logo{font-size:17px}
+}
+@media (min-width:960px){
+  .probaste{grid-template-columns:1.15fr .85fr;gap:5rem;align-items:start}
+  .cierre-espejo{position:sticky;top:120px}
+  .quien__grid{grid-template-columns:.85fr 1.15fr}
+  .quien .collage{position:sticky;top:110px}
+  .destacada{grid-template-columns:1.25fr .75fr;gap:3rem}
+  .recuadro{margin-top:4.5rem}
+  .pasos{grid-template-columns:repeat(4,1fr)}
+  .porque__grid{grid-template-columns:1.2fr .8fr;gap:5rem}
+  .costo__grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+  .costo h2{margin-bottom:0}
+  .footer__grid{grid-template-columns:auto 1fr auto;gap:4rem}
+}
+</style>
+</head>
+<body class="no-js">
+
+<!-- ======================= HEADER ======================= -->
+<header class="header" id="header">
+  <div class="wrap header__in">
+    <a class="logo" href="#inicio" aria-label="SP Agency">
+      <span class="logo__sp" aria-hidden="true">SP<span class="logo__punto"></span></span>
+      <span class="logo__barra" aria-hidden="true"></span>
+      <span class="logo__agency" aria-hidden="true">AGENCY</span>
+    </a>
+    <a class="boton boton--oliva js-wa" href="#" target="_blank" rel="noopener">Hablemos</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- ======================= 1 · HERO ======================= -->
+<section class="hero" aria-labelledby="t-hero">
+  <div class="wrap centro">
+    <p class="etiqueta revelar">¿Publicidad que funcione y que además se entienda?</p>
+    <h1 id="t-hero" class="revelar" data-d="1">Hago la publicidad y la comunicación digital de tu marca.</h1>
+    <p class="bajada revelar" data-d="2">Estrategia, pauta en Meta Ads e IA para marcas que quieren crecer. Un trabajo prolijo y profesional, explicado hasta que lo entiendas al 100%.</p>
+    <div class="revelar" data-d="3">
+      <a class="boton boton--oliva js-wa" href="#" target="_blank" rel="noopener">Hablemos</a>
+    </div>
+
+    <!-- [IMAGEN: collage, foto surrealista en blanco y negro con grano (oficina en el mar o computadora retro) recortada sobre fondo plano de color pop] -->
+    <figure class="collage collage--rosa revelar" data-imagen="hero">
+      <div class="collage__foto" role="img" aria-label="Espacio para collage: foto surrealista en blanco y negro con grano">
+        <span class="collage__nota">[IMAGEN: collage, foto surrealista en blanco y negro con grano (oficina en el mar o computadora retro) recortada sobre fondo plano de color pop]</span>
+      </div>
+      <p class="marcador sticker">Hasta que quede claro.</p>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================= 2 · ESPEJO DEL DOLOR ======================= -->
+<section class="seccion espejo" aria-labelledby="t-espejo">
+  <div class="wrap">
+    <p class="etiqueta revelar">¿Te pasa algo de esto?</p>
+    <h2 id="t-espejo" class="revelar" data-d="1">¿En cuál te ves?</h2>
+
+    <div class="tarjetas">
+      <article class="tarjeta revelar">
+        <h3>“Ya pauté, pero nadie me daba bola.”</h3>
+        <p>Trabajaste con una agencia y sentías que eras un cliente más: respuestas tarde, reportes que no entendías y poca conexión con tu marca.</p>
+      </article>
+      <article class="tarjeta revelar" data-d="1">
+        <h3>“Me lo hacía un conocido.”</h3>
+        <p>Alguien de confianza te daba una mano, pero entre sus cosas, tu comunicación siempre quedaba para después.</p>
+      </article>
+      <article class="tarjeta revelar" data-d="2">
+        <h3>“Nunca arranqué con lo digital.”</h3>
+        <p>Sabés que tenés que estar, pero no sabés por dónde empezar, y aparecer en redes te da más pereza que ganas.</p>
+      </article>
+    </div>
+
+    <div class="probaste">
+      <div class="revelar">
+        <h3>¿Ya probaste esto?</h3>
+        <ul class="checklist">
+          <li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.3 4.8 9 10 3" fill="none" stroke="#2B2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Darle “Promocionar” a un posteo y esperar.</span></li>
+          <li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.3 4.8 9 10 3" fill="none" stroke="#2B2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Mensajes automáticos sin nadie que haga el seguimiento.</span></li>
+          <li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.3 4.8 9 10 3" fill="none" stroke="#2B2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Subir una foto cada tanto.</span></li>
+          <li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.3 4.8 9 10 3" fill="none" stroke="#2B2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Pedirle un plan a la IA y seguirlo al pie de la letra.</span></li>
+          <li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.3 4.8 9 10 3" fill="none" stroke="#2B2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Arrancar con todo y abandonar al mes.</span></li>
+          <li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.3 4.8 9 10 3" fill="none" stroke="#2B2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Pagar una agencia cara y no poder sostenerla hasta ver resultados.</span></li>
+        </ul>
+      </div>
+      <div class="cierre-espejo revelar" data-d="1">
+        <p>No es que te falten ganas: te faltaba un plan y alguien que lo sostenga con vos.</p>
+        <p class="marcador">Nos pasó a todos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 3 · EL COSTO DE SEGUIR IGUAL ======================= -->
+<section class="seccion costo" aria-labelledby="t-costo">
+  <div class="wrap">
+    <div class="costo__grid">
+      <div>
+        <p class="etiqueta revelar">¿Y si seguís como hasta ahora?</p>
+        <h2 id="t-costo" class="revelar" data-d="1">Hacer siempre lo mismo también tiene un costo.</h2>
+      </div>
+      <div>
+        <ul class="costo__lista revelar" data-d="1">
+          <li>Tus clientes te compran una vez y no vuelven.</li>
+          <li>Tu marca no llega a gente nueva.</li>
+          <li>Ponés plata que podría estar trabajando con estrategia.</li>
+          <li>Y te frustrás porque no vendés lo que sabés que podrías vender.</li>
+        </ul>
+        <p class="marcador revelar" data-d="2">Y lo peor: tu marca pierde onda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 4 · QUIÉN ESTÁ DETRÁS ======================= -->
+<section class="seccion quien" aria-labelledby="t-quien">
+  <div class="wrap quien__grid">
+    <!-- [IMAGEN: collage de marca en lugar de foto personal. Se reemplazará por una foto editorial vertical (4:5): poner <img src="..." alt="Sophie Pelleriti"> dentro de .collage] -->
+    <figure class="collage collage--rojo revelar" data-imagen="quien">
+      <div class="collage__foto" role="img" aria-label="Espacio para foto vertical editorial">
+        <span class="collage__nota">[IMAGEN: collage de marca en lugar de foto personal. Contenedor preparado para foto vertical editorial]</span>
+      </div>
+    </figure>
+
+    <div class="quien__texto">
+      <p class="etiqueta revelar">¿Quién está detrás?</p>
+      <h2 id="t-quien" class="revelar" data-d="1">Hoy SP Agency soy yo: Sophie Pelleriti.</h2>
+      <div class="revelar" data-d="2">
+        <p>De chica inventaba cuentos, miraba cine y soñaba con tener mi canal de YouTube. La creatividad siempre estuvo. Las ventas llegaron después, y de casualidad.</p>
+        <p>Vengo del real estate, un rubro de ticket alto, donde cada venta es grande y cada cliente se cuida como oro. Entré sin haber vendido nunca nada (y menos un terreno) y descubrí que era buena: resolutiva, atenta y con clientes que volvían. Llegué a supervisora y, mientras tanto, marketing siempre me llamó la atención: era el área más creativa y divertida de la empresa, y yo quería ser parte de esa tribu.</p>
+        <p class="destacado">Como gestora de leads aprendí lo que hoy aplico en cada campaña: cuidar cada peso invertido y que ningún lead quede sin seguimiento.</p>
+        <p>Hoy llevo todo eso a la comunicación digital. Acompaño a marcas desde la estrategia hasta la pauta. Una sola persona de punta a punta: la que arma tu estrategia es la misma que te la explica.</p>
+      </div>
+
+      <div class="pilares">
+        <div class="pilar revelar"><h3>Cuidado</h3><p>de tu inversión, de tus clientes y de tu marca.</p></div>
+        <div class="pilar revelar" data-d="1"><h3>Seguimiento</h3><p>ninguna consulta ni lead queda sin respuesta.</p></div>
+        <div class="pilar revelar" data-d="2"><h3>Flexibilidad</h3><p>formal o descontracturado, a tu ritmo. Lo que importa es la intención y la estrategia.</p></div>
+      </div>
+
+      <p class="marcador marcador--largo revelar">Firme con tus metas, flexible con los caminos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 5 · SERVICIOS ======================= -->
+<section class="seccion servicios" aria-labelledby="t-servicios">
+  <div class="wrap">
+    <p class="etiqueta revelar">¿Qué puedo hacer por tu marca?</p>
+    <h2 id="t-servicios" class="revelar" data-d="1">Publicidad que trae clientes, no solo likes.</h2>
+
+    <div class="servicios__grid">
+      <article class="destacada revelar">
+        <div>
+          <h3>Pauta en Meta Ads</h3>
+          <p class="destacada__intro">Estrategia y gestión de publicidad en Instagram y Facebook, de punta a punta:</p>
+          <ul class="destacada__lista">
+            <li>Estrategia según el objetivo de tu marca.</li>
+            <li>Armado y gestión de campañas, optimizadas mes a mes.</li>
+            <li>Creativos: diseño y videos para tus anuncios.</li>
+            <li>Tráfico y seguimiento de leads: que cada consulta llegue, se ordene y no se enfríe.</li>
+            <li>Reportes claros y reuniones periódicas.</li>
+            <li>Contacto directo conmigo, siempre.</li>
+          </ul>
+        </div>
+        <aside class="recuadro">
+          <p><strong>Mi fuerte: los leads.</strong>Vengo de gestionar prospectos en real estate, donde ninguno podía quedar sin seguimiento. Para mí, tu inversión no termina en el clic: termina cuando esa consulta se convierte en cliente.</p>
+        </aside>
+      </article>
+
+      <div class="chicas">
+        <article class="chica revelar">
+          <h3>¿Tu web no te trae consultas?</h3>
+          <p><strong>Webs y landings.</strong>Mejoro tu web o armo una landing pensada para vender, con ayuda de la IA.</p>
+        </article>
+        <article class="chica revelar" data-d="1">
+          <h3>¿No sabés qué publicar?</h3>
+          <p><strong>Estrategia de contenido orgánico.</strong>Te armo la estrategia y los guiones para que vos o tu equipo los graben y publiquen con un rumbo claro.</p>
+        </article>
+        <article class="chica revelar" data-d="2">
+          <h3>¿No sabés por dónde empezar?</h3>
+          <p><strong>Asesoramiento digital.</strong>Ordenamos juntos tu comunicación digital y definimos los próximos pasos.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="servicios__cierre revelar">
+      <p>Cada marca es distinta, por eso no tengo paquetes cerrados.</p>
+      <a class="boton boton--oliva js-wa" href="#" target="_blank" rel="noopener">Trabajemos en tu marca</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 6 · CÓMO TRABAJAMOS ======================= -->
+<section class="seccion como" aria-labelledby="t-como">
+  <div class="wrap">
+    <p class="etiqueta revelar">¿Cómo es trabajar conmigo?</p>
+    <h2 id="t-como" class="revelar" data-d="1">Ordenado, claro y sin vueltas.</h2>
+
+    <ol class="pasos" style="list-style:none;margin:0;padding:0">
+      <li class="paso revelar">
+        <span class="paso__n" aria-hidden="true">1</span>
+        <h3>Nos conocemos</h3>
+        <p>Hacemos una reunión para que me cuentes de tu marca y me conozcas. Hablamos de tus objetivos, de cómo trabajo y de los valores del servicio.</p>
+      </li>
+      <li class="paso revelar" data-d="1">
+        <span class="paso__n" aria-hidden="true">2</span>
+        <h3>Me pasás lo necesario</h3>
+        <p>Accesos, brief de marca, objetivos y presupuesto. Con eso arranco.</p>
+      </li>
+      <li class="paso revelar" data-d="2">
+        <span class="paso__n" aria-hidden="true">3</span>
+        <h3>Lanzamos en menos de una semana</h3>
+        <p>Mientras me vas pasando la información, yo ya voy trabajando. Apenas tengo todo, la campaña sale en menos de una semana.</p>
+      </li>
+      <li class="paso revelar" data-d="3">
+        <span class="paso__n" aria-hidden="true">4</span>
+        <h3>Te acompaño y te rindo cuentas</h3>
+        <p>El primer mes el contacto es más cercano, para ajustar todo. Después seguimos en contacto de forma fluida, sin horarios rígidos: mi compromiso es con tu objetivo. Y al cierre de cada mes te entrego un informe con resultados y próximos pasos.</p>
+      </li>
+    </ol>
+
+    <div class="centro">
+      <p class="marcador subrayado revelar">Ordenado, pero sin rigidez.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 7 · ¿POR QUÉ SP AGENCY? ======================= -->
+<section class="seccion porque" aria-labelledby="t-porque">
+  <div class="wrap">
+    <p class="etiqueta revelar">¿Por qué SP Agency?</p>
+    <h2 id="t-porque" class="revelar" data-d="1">Trato de agencia, cercanía de persona<span class="punto">.</span></h2>
+
+    <div class="porque__grid">
+      <div class="motivos">
+        <div class="motivo revelar"><h3>Un valor más accesible.</h3><p>No pagás la estructura de un equipo grande: pagás estrategia y trabajo directo.</p></div>
+        <div class="motivo revelar"><h3>Un vínculo, no un número de cliente.</h3><p>Hablás siempre conmigo, que conozco tu marca de punta a punta.</p></div>
+        <div class="motivo revelar"><h3>Tu imagen, cuidada de cerca.</h3><p>Además de la pauta, te ayudo a que tu marca se vea coherente en todos lados.</p></div>
+        <div class="motivo revelar"><h3>Todo explicado hasta que quede claro.</h3><p>Sepas o no de marketing.</p></div>
+      </div>
+
+      <aside class="noves revelar" data-d="1">
+        <h3>Lo que no vas a ver en tu marca</h3>
+        <ul>
+          <li>Trends que no tienen nada que ver con vos.</li>
+          <li>Plantillas de Canva que usa todo el mundo.</li>
+          <li>IA en piloto automático (la uso, pero con criterio).</li>
+          <li>Reportes que no se entienden.</li>
+        </ul>
+      </aside>
+    </div>
+
+    <p class="marcador marcador--largo revelar">Me gusta trabajar con personas que comparten mis valores: la libertad, el tiempo y el cuidado.</p>
+  </div>
+</section>
+
+<!-- ======================= 8 · ANTES DE ARRANCAR ======================= -->
+<section class="seccion antes centro" aria-label="Antes de arrancar">
+  <span class="sol" aria-hidden="true"></span>
+  <div class="wrap">
+    <p class="etiqueta revelar">Antes de arrancar</p>
+    <p class="antes__texto revelar" data-d="1">Trabajo de forma remota con marcas de servicios, estés donde estés, y no hace falta que sepas de marketing. Si tenés dudas sobre cómo trabajo o sobre la inversión, te ofrezco una reunión sin costo para charlarlo y orientarte.</p>
+  </div>
+</section>
+
+<!-- ======================= 9 · CIERRE ======================= -->
+<section class="seccion cierre centro" aria-labelledby="t-cierre">
+  <div class="wrap">
+    <p class="etiqueta revelar">¿Arrancamos?</p>
+    <h2 id="t-cierre" class="revelar" data-d="1">Trabajemos en tu marca.</h2>
+    <p class="cierre__texto revelar" data-d="2">Escribime y coordinamos una reunión sin costo para conocernos y ver cómo puedo ayudarte.</p>
+    <div class="revelar" data-d="3">
+      <a class="boton boton--lino boton--grande js-wa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+        Agendá tu reunión por WhatsApp
+      </a>
+    </div>
+    <p class="marcador revelar">Hasta que quede claro.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================= 10 · FOOTER ======================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <a class="logo logo--negativo" href="#inicio" aria-label="SP Agency">
+        <span class="logo__sp" aria-hidden="true">SP<span class="logo__punto"></span></span>
+        <span class="logo__barra" aria-hidden="true"></span>
+        <span class="logo__agency" aria-hidden="true">AGENCY</span>
+      </a>
+      <div class="footer__frases">
+        <p>Estrategia, pauta e IA para marcas que quieren crecer.</p>
+        <p class="lema">Firme con tus metas, flexible con los caminos.</p>
+      </div>
+      <div class="redes">
+        <a class="js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+        </a>
+        <a href="https://instagram.com/spagencymkt" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <p class="footer__legal">© 2026 SP Agency</p>
+  </div>
+</footer>
+
+<!-- Botón flotante de WhatsApp (solo mobile) -->
+<a class="wa-flotante js-wa" id="waFlotante" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+</a>
+
+<script>
+(function(){
+  var WHATSAPP = "https://wa.me/5492616330803?text=Hola%20Sophie%2C%20vi%20la%20web%20de%20SP%20Agency%20y%20quiero%20agendar%20una%20reuni%C3%B3n%20para%20mi%20marca.";
+  document.querySelectorAll(".js-wa").forEach(function(a){ a.href = WHATSAPP; });
+
+  document.body.classList.remove("no-js");
+
+  // Animaciones suaves al hacer scroll
+  var items = document.querySelectorAll(".revelar");
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add("is-in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin:"0px 0px -8% 0px", threshold:.12 });
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add("is-in"); });
+  }
+
+  // Header con línea al scrollear + botón flotante después del hero
+  var header = document.getElementById("header");
+  var wa = document.getElementById("waFlotante");
+  var hero = document.querySelector(".hero .boton");
+  function onScroll(){
+    var y = window.scrollY || window.pageYOffset;
+    header.classList.toggle("is-scrolled", y > 8);
+    var limite = hero ? hero.getBoundingClientRect().bottom : 0;
+    wa.classList.toggle("is-visible", limite < 0);
+  }
+  window.addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+})();
+</script>
+</body>
+</html>
